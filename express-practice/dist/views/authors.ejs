@@ -1,0 +1,16 @@
+<!-- authors.ejs -->
+<html>
+  <head>
+    <title>Authors Page</title>
+    <link rel="stylesheet" href="/styles.css">
+    
+  </head>
+  <body>
+    <span>There are currently <%- authors.length %> Authors in our database </span>
+    <ul>
+      <% authors.forEach((author) => { %>
+        <li>Author Name: <%- author.name %></li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
