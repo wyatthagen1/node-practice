@@ -1,0 +1,25 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <h1>Index</h1>
+  <ul>
+    <% if (locals.users) {%>
+      <% users.forEach(user => { %>
+        <li>
+          Name: <%= user.name %>, Birthdate: <%= user.birthdate %> Email: <%= user.email%> Age: <%= user?.age %>
+          <a href="/update/<%=user.name%>">Update</a>
+          <form action="/delete/<%=user.name%>" method="POST" style="display:inline">
+            <button type="submit">Delete</button>
+          </form>
+        </li>
+      <% }); %>
+    <% } %>
+  </ul>
+  <a href="/create">Create a user</a>
+  <a href="/search">Search for a user</a>
+
+</body>
+</html>

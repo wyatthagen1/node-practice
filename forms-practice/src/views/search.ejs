@@ -1,0 +1,27 @@
+<!-- views/createUser.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+  </head>
+<body>
+  <h1><%= title %></h1>
+  <form action="/search" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name">
+    <label for="email">Email: </label>
+    <input type="email" name="email" id="email">
+    <button type="submit">Submit</button>
+  </form>
+  <a href="/">Back to home</a>
+  <ul>
+    <% if (locals.user) {%>
+        <li>
+          Name: <%= user.name %>, Birthdate: <%= user.birthdate %> Email: <%= user.email%> Age: <%= user?.age %>
+          <a href="/search">Search Again</a>
+        </li>
+    <% } %>
+    <a href="/">Home</a>
+  </ul>
+</body>
+</html>
